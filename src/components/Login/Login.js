@@ -5,7 +5,8 @@ import axios from "axios";
 import swal from "sweetalert";
 import { Link } from "react-router-dom";
 import Recaptcha from "react-recaptcha";
-import { response } from "express";
+// import ReCAPTCHA from "react-google-recaptcha";
+
 
 const LoginSchema = Yup.object().shape({
   username: Yup.string()
@@ -134,6 +135,7 @@ class Login extends Component {
         <div className="form-group">
           <label>Recaptcha Validation</label>
           <Recaptcha
+            //sitekey="6LfFtOopAAAAAOnxyMwQkRx8l2NKDCn1EmrS_gJk"
             sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
             render="explicit"
             theme="light"
@@ -160,7 +162,6 @@ class Login extends Component {
               class="btn btn-primary btn-block"
             >
               Sign In
-
             </button>
           </div>
         </div>
